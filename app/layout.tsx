@@ -1,10 +1,17 @@
 import type React from "react"
 import "@/app/globals.css"
+import { Mona_Sans as FontSans } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
-import { AuthProvider } from "@/hooks/use-auth"
-import { SettingsProvider } from "@/hooks/use-settings"
-import { ChatHistoryProvider } from "@/hooks/use-chat-history"
-import { NextAuthProvider } from "@/components/providers/session-provider"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
+import { Toaster } from "@/components/ui/toaster"
+import { cn } from "@/lib/utils"
+import { PageTransition } from "@/components/ui/motion"
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export default function RootLayout({
   children,
@@ -13,19 +20,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <title>AI Chat UI</title>
-        <meta name="description" content="AI-powered chat interface with voice interaction and structured output" />
-      </head>
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <AuthProvider>
-            <SettingsProvider>
-              <ChatHistoryProvider>
-                <NextAuthProvider>{children}</NextAuthProvider>
-              </ChatHistoryProvider>
-            </SettingsProvider>
-          </AuthProvider>
+      <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <div className="relative flex min-h-screen flex-col">
+            <div className="fixed inset-0 bg-gradient-to-br from-background to-background via-wine-950/5 dark:from-background dark:via-wine-900/5 dark:to-background -z-10" />
+            <Navbar />
+            <main className="flex-1">
+              <PageTransition>{children}</PageTransition>
+            </main>
+            <Footer />
+            <Toaster />
+          </div>
         </ThemeProvider>
       </body>
     </html>
