@@ -1,5 +1,6 @@
 # Vine_Ai
-![image](https://github.com/user-attachments/assets/623e895c-6118-4a88-8ea8-555d79ca475d)
+![image](https://github.com/user-attachments/assets/20ce50bc-bb20-45ae-b7f8-2bf5f0790827)
+
 
 **Vine_Ai** is an AI-powered virtual waiter chatbot designed to enhance customer interaction and streamline restaurant services. This project is currently in its initial version (V0) and focuses on delivering a user-friendly and efficient interface for managing customer orders, queries, and more.
 
