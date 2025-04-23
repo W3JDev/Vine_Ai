@@ -1,7 +1,3 @@
-Certainly! Below is a sample README template for your repository, **Vine_Ai**, based on the provided context. You can modify or expand it as needed.
-
----
-
 # Vine_Ai
 
 **Vine_Ai** is an AI-powered virtual waiter chatbot designed to enhance customer interaction and streamline restaurant services. This project is currently in its initial version (V0) and focuses on delivering a user-friendly and efficient interface for managing customer orders, queries, and more.
